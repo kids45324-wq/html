@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jone Fitness Club | Indian Fitness Club - Train Hard. Stay Strong.</title>
+  <meta name="description" content="Jone Fitness Club (Indian Fitness Club) - Premium gym, personal training, strength conditioning, weight loss, and muscle building in a world-class environment.">
+  <meta name="keywords" content="Jone Fitness Club, Indian Fitness Club, gym near me, fitness club, gym membership, personal trainer, strength training, weight loss gym">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts (Inter and Montserrat for bold athletic typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#08080a',
+              dark: '#0f1115',
+              card: '#161922',
+              border: '#232734',
+              orange: '#ff4b00',
+              amber: '#ff7b00',
+              red: '#e53935',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-orange': '0 0 25px -5px rgba(255, 75, 0, 0.45)',
+            'glow-strong': '0 0 35px -2px rgba(255, 75, 0, 0.65)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #08080a;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #ff4b00 0%, #ff8800 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .border-gradient {
+      border-image: linear-gradient(to right, #ff4b00, #ff8800) 1;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0c10;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff4b00;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff7b00;
+    }
+    .glass-nav {
+      background: rgba(11, 12, 16, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+  </style>
+</head>
+
+<body class="bg-brand-black text-slate-200 antialiased selection:bg-brand-orange selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-brand-orange to-brand-amber text-black py-1.5 px-4 text-xs font-bold tracking-wider uppercase text-center flex items-center justify-center space-x-2">
+    <span>🔥 New Season Promotion: Get 20% Off All Annual Memberships + Free Fitness Assessment!</span>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 w-full glass-nav border-b border-brand-border/60 transition-all duration-300" id="mainHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center space-x-3 group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-orange to-red-600 flex items-center justify-center text-white font-heading font-black text-2xl shadow-glow-orange group-hover:scale-105 transition-transform duration-300">
+            JFC
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl sm:text-2xl font-black font-heading tracking-tight text-white flex items-center">
+              JONE<span class="text-brand-orange ml-1">FITNESS</span>
+            </span>
+            <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Indian Fitness Club</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-300">
+          <a href="#home" class="hover:text-brand-orange transition-colors">Home</a>
+          <a href="#about" class="hover:text-brand-orange transition-colors">About Us</a>
+          <a href="#programs" class="hover:text-brand-orange transition-colors">Programs</a>
+          <a href="#trainers" class="hover:text-brand-orange transition-colors">Trainers</a>
+          <a href="#membership" class="hover:text-brand-orange transition-colors">Membership</a>
+          <a href="#gallery" class="hover:text-brand-orange transition-colors">Gallery</a>
+          <a href="#testimonials" class="hover:text-brand-orange transition-colors">Testimonials</a>
+          <a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Action Button -->
+        <div class="hidden sm:flex items-center space-x-4">
+          <a href="#contact" class="text-xs uppercase tracking-wider font-bold text-slate-300 hover:text-white px-2 py-1">
+            Free Trial
+          </a>
+          <button onclick="openJoinModal('Pro Membership ($49/mo)')" class="bg-gradient-to-r from-brand-orange to-brand-amber hover:from-orange-600 hover:to-brand-orange text-white font-bold font-heading text-sm px-6 py-2.5 rounded-full shadow-glow-orange transition-all duration-300 hover:scale-105 active:scale-95 uppercase tracking-wider flex items-center gap-2">
+            <span>Join Now</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <div class="flex lg:hidden items-center">
+          <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="p-2.5 rounded-lg bg-brand-card text-slate-300 hover:text-white border border-brand-border focus:outline-none">
+            <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden border-b border-brand-border bg-brand-card/95 px-6 pt-3 pb-6 space-y-3">
+      <a href="#home" class="mobile-nav-link block py-2 text-base font-semibold text-white border-b border-white/5">Home</a>
+      <a href="#about" class="mobile-nav-link block py-2 text-base font-semibold text-slate-300 hover:text-brand-orange border-b border-white/5">About Us</a>
+      <a href="#programs" class="mobile-nav-link block py-2 text-base font-semibold text-slate-300 hover:text-brand-orange border-b border-white/5">Programs</a>
+      <a href="#trainers" class="mobile-nav-link block py-2 text-base font-semibold text-slate-300 hover:text-brand-orange border-b border-white/5">Trainers</a>
+      <a href="#membership" class="mobile-nav-link block py-2 text-base font-semibold text-slate-300 hover:text-brand-orange border-b border-white/5">Membership</a>
+      <a href="#gallery" class="mobile-nav-link block py-2 text-base font-semibold text-slate-300 hover:text-brand-orange border-b border-white/5">Gallery</a>
+      <a href="#testimonials" class="mobile-nav-link block py-2 text-base font-semibold text-slate-300 hover:text-brand-orange border-b border-white/5">Testimonials</a>
+      <a href="#contact" class="mobile-nav-link block py-2 text-base font-semibold text-slate-300 hover:text-brand-orange">Contact</a>
+      <div class="pt-3">
+        <button onclick="openJoinModal('VIP Pass'); toggleMobileMenu();" class="w-full text-center bg-gradient-to-r from-brand-orange to-brand-amber text-white font-bold py-3 rounded-xl shadow-glow-orange uppercase text-sm tracking-wider">
+          JOIN JONE FITNESS CLUB
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section id="home" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+      <!-- Background Graphic & Images -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" 
+          alt="Athlete training with weights in modern gym" 
+          class="w-full h-full object-cover object-center filter brightness-[0.32] contrast-125 scale-105 transition-transform duration-1000"
+          id="heroBgImage"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-radial-at-c from-brand-orange/15 via-transparent to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center flex flex-col items-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-card/90 border border-brand-orange/40 text-brand-amber text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-glow-orange backdrop-blur-md">
+          <i data-lucide="flame" class="w-4 h-4 text-brand-orange animate-bounce"></i>
+          <span>Indian Fitness Club • Train Hard. Stay Strong. Be Better.</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-heading uppercase tracking-tight text-white max-w-5xl leading-[1.05] drop-shadow-md">
+          BUILD YOUR <span class="text-gradient underline decoration-brand-orange/40 decoration-4">STRONGEST</span> SELF
+        </h1>
+
+        <!-- Subheading -->
+        <p class="mt-6 text-base sm:text-xl md:text-2xl text-slate-300 max-w-3xl font-normal leading-relaxed">
+          Transform your body, improve your fitness, and build unshakable confidence with expert training and state-of-the-art facilities at <strong class="text-white">Jone Fitness Club</strong>.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <button onclick="openJoinModal('All Access Trial')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange via-red-600 to-brand-amber hover:from-orange-600 hover:to-orange-500 text-white font-extrabold font-heading text-base tracking-wider uppercase shadow-glow-strong hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3">
+            <span>JOIN NOW</span>
+            <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+          </button>
+
+          <a href="#programs" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold font-heading text-base tracking-wider uppercase backdrop-blur-sm transition-all duration-300 flex items-center justify-center gap-2 hover:border-brand-orange">
+            <span>EXPLORE PROGRAMS</span>
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+
+        <!-- 4 Highlights below Buttons -->
+        <div class="mt-14 w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
+          <div class="p-3 sm:p-4 rounded-xl bg-brand-card/70 border border-brand-border/80 backdrop-blur-sm flex flex-col items-center hover:border-brand-orange/50 transition-colors">
+            <i data-lucide="dumbbell" class="w-6 h-6 text-brand-orange mb-2"></i>
+            <span class="text-sm font-bold text-white tracking-wide">Modern Equipment</span>
+            <span class="text-[11px] text-slate-400">Biomechanic grade</span>
+          </div>
+
+          <div class="p-3 sm:p-4 rounded-xl bg-brand-card/70 border border-brand-border/80 backdrop-blur-sm flex flex-col items-center hover:border-brand-orange/50 transition-colors">
+            <i data-lucide="award" class="w-6 h-6 text-brand-amber mb-2"></i>
+            <span class="text-sm font-bold text-white tracking-wide">Expert Trainers</span>
+            <span class="text-[11px] text-slate-400">Certified coaches</span>
+          </div>
+
+          <div class="p-3 sm:p-4 rounded-xl bg-brand-card/70 border border-brand-border/80 backdrop-blur-sm flex flex-col items-center hover:border-brand-orange/50 transition-colors">
+            <i data-lucide="calendar-check" class="w-6 h-6 text-brand-orange mb-2"></i>
+            <span class="text-sm font-bold text-white tracking-wide">Flexible Memberships</span>
+            <span class="text-[11px] text-slate-400">No strict lock-ins</span>
+          </div>
+
+          <div class="p-3 sm:p-4 rounded-xl bg-brand-card/70 border border-brand-border/80 backdrop-blur-sm flex flex-col items-center hover:border-brand-orange/50 transition-colors">
+            <i data-lucide="activity" class="w-6 h-6 text-brand-amber mb-2"></i>
+            <span class="text-sm font-bold text-white tracking-wide">Personalized Workouts</span>
+            <span class="text-[11px] text-slate-400">Goal-oriented pacing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT JONE FITNESS CLUB -->
+    <section id="about" class="py-24 bg-brand-dark relative border-t border-brand-border/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Left Column: Visual Collage of Men & Women Training -->
+          <div class="lg:col-span-6 relative">
+            <div class="relative grid grid-cols-2 gap-4">
+              <div class="space-y-4">
+                <div class="overflow-hidden rounded-2xl border border-brand-border shadow-2xl">
+                  <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=900&auto=format&fit=crop" 
+                       alt="Male athlete lifting heavy weights" 
+                       class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-brand-border shadow-2xl">
+                  <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=900&auto=format&fit=crop" 
+                       alt="Gym community kettlebell training" 
+                       class="w-full h-44 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+              </div>
+              <div class="space-y-4 pt-8">
+                <div class="overflow-hidden rounded-2xl border border-brand-border shadow-2xl">
+                  <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=900&auto=format&fit=crop" 
+                       alt="Female fitness athlete performing cable exercise" 
+                       class="w-full h-52 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-brand-border shadow-2xl bg-gradient-to-br from-brand-orange to-red-600 p-6 flex flex-col justify-center items-center text-center text-white">
+                  <i data-lucide="shield-check" class="w-10 h-10 mb-2"></i>
+                  <span class="text-xl font-heading font-black">100% MOTIVATION</span>
+                  <p class="text-xs text-white/90 mt-1">Science-backed training for women & men.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Absolute Float Experience Card -->
+            <div class="absolute -bottom-6 -left-6 sm:bottom-4 sm:left-4 bg-brand-card/95 border-2 border-brand-orange p-4 sm:p-5 rounded-2xl shadow-glow-orange backdrop-blur-md hidden sm:flex items-center gap-4">
+              <div class="p-3 bg-brand-orange/20 rounded-xl text-brand-orange">
+                <i data-lucide="medal" class="w-8 h-8"></i>
+              </div>
+              <div>
+                <div class="text-2xl font-black font-heading text-white">#1 RATED GYM</div>
+                <div class="text-xs text-slate-400">In Town for Strength & Transformation</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Information & Metrics -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest">
+              <span class="w-8 h-0.5 bg-brand-orange inline-block"></span>
+              <span>About Jone Fitness Club</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black font-heading uppercase text-white leading-tight">
+              MORE THAN A GYM — <span class="text-gradient">IT'S YOUR FITNESS JOURNEY</span>
+            </h2>
+
+            <p class="text-base text-slate-300 leading-relaxed">
+              <strong>Jone Fitness Club (Indian Fitness Club)</strong> is a modern fitness center designed for people who want to become stronger, healthier, and more confident. Whether you are a complete beginner stepping into a gym for the first time or an experienced fitness enthusiast pushing for new personal records, our supportive environment, professional trainers, and modern equipment help you stay motivated and reach your fitness goals.
+            </p>
+
+            <p class="text-sm text-slate-400 leading-relaxed">
+              We combine functional conditioning, progressive overload strength training, and tailored nutritional guidance to provide sustainable transformation for both men and women of all ages.
+            </p>
+
+            <!-- 4 Statistics -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4">
+              <div class="p-4 rounded-xl bg-brand-card border border-brand-border text-center hover:border-brand-orange transition-colors">
+                <div class="text-3xl sm:text-4xl font-black font-heading text-brand-orange">500+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-300 font-semibold mt-1">Active Members</div>
+              </div>
+              <div class="p-4 rounded-xl bg-brand-card border border-brand-border text-center hover:border-brand-orange transition-colors">
+                <div class="text-3xl sm:text-4xl font-black font-heading text-brand-amber">10+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-300 font-semibold mt-1">Expert Trainers</div>
+              </div>
+              <div class="p-4 rounded-xl bg-brand-card border border-brand-border text-center hover:border-brand-orange transition-colors">
+                <div class="text-3xl sm:text-4xl font-black font-heading text-brand-orange">50+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-300 font-semibold mt-1">Weekly Workouts</div>
+              </div>
+              <div class="p-4 rounded-xl bg-brand-card border border-brand-border text-center hover:border-brand-orange transition-colors">
+                <div class="text-3xl sm:text-4xl font-black font-heading text-brand-amber">5+</div>
+                <div class="text-xs uppercase tracking-wider text-slate-300 font-semibold mt-1">Years Experience</div>
+              </div>
+            </div>
+
+            <!-- Learn More Button -->
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <button onclick="openInfoModal('About Jone Fitness Club', 'Jone Fitness Club (Indian Fitness Club) was established with a singular mission: to make premium fitness coaching, top-tier biomechanical equipment, and an uplifting community accessible to everyone. Our multi-zone facility is equipped with dedicated free-weight areas, Olympic lifting platforms, HIIT & cardio turf, clean locker rooms, and certified nutrition counselors.')" class="px-7 py-3 rounded-xl bg-brand-card hover:bg-brand-border text-white border border-brand-border font-bold font-heading text-sm uppercase tracking-wider transition-all duration-300 flex items-center gap-2 hover:border-brand-orange">
+                <span>Learn More About Us</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-brand-orange"></i>
+              </button>
+
+              <a href="#trainers" class="text-sm font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors">
+                <span>Meet certified instructors</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. FITNESS PROGRAMS -->
+    <section id="programs" class="py-24 bg-brand-black relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>Specialized Training</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            CHOOSE YOUR <span class="text-gradient">FITNESS PROGRAM</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            Engineered routines tailored for every fitness ambition. Whether seeking raw power, rapid fat loss, or holistic agility, we have you covered.
+          </p>
+        </div>
+
+        <!-- 6 Program Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Strength Training -->
+          <div class="group rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=900&auto=format&fit=crop" 
+                     alt="Male athlete lifting barbell" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-brand-orange text-white text-[11px] uppercase font-black px-3 py-1 rounded-full tracking-wider">
+                  Power & Density
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-brand-orange transition-colors">Strength Training</h3>
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Build strength, increase muscle, and improve overall physical performance through structured compound lifting and progressive load.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <button onclick="openInfoModal('Strength Training Program', 'Strength training at Jone Fitness Club focuses on mastering the foundational movements: squats, deadlifts, presses, and rows. Led by certified strength coaches, this program incorporates progressive overload, periodized cycles, and joint-protective mechanics suitable for all experience levels.')" class="w-full py-2.5 rounded-lg bg-brand-border/60 hover:bg-brand-orange text-slate-200 hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+                <span>Learn More</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Weight Loss -->
+          <div class="group rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=900&auto=format&fit=crop" 
+                     alt="Female fitness athlete doing core and metabolic cardio" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-red-600 text-white text-[11px] uppercase font-black px-3 py-1 rounded-full tracking-wider">
+                  Fat Burn & Stamina
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-brand-orange transition-colors">Weight Loss</h3>
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Structured workouts and fitness guidance designed to support healthy weight-management goals and metabolic conditioning.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <button onclick="openInfoModal('Weight Loss Program', 'Our Weight Loss Blueprint mixes high-energy metabolic conditioning (MetCon), HIIT circuits, and heart-rate zone management. Complemented with continuous nutritional coaching, you will sustainably shed fat while toning lean muscle tissue.')" class="w-full py-2.5 rounded-lg bg-brand-border/60 hover:bg-brand-orange text-slate-200 hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+                <span>Learn More</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Muscle Building -->
+          <div class="group rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=900&auto=format&fit=crop" 
+                     alt="Athlete training arms and shoulders" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-brand-amber text-black text-[11px] uppercase font-black px-3 py-1 rounded-full tracking-wider">
+                  Hypertrophy
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-brand-orange transition-colors">Muscle Building</h3>
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Progressive resistance training designed to help members develop aesthetic symmetry, size, strength, and muscle definition.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <button onclick="openInfoModal('Muscle Building Program', 'Focuses on hypertrophy principles: optimum mechanical tension, metabolic stress, and volume. You will receive customized split schedules (Upper/Lower or Push/Pull/Legs) combined with personalized macronutrient target coaching.')" class="w-full py-2.5 rounded-lg bg-brand-border/60 hover:bg-brand-orange text-slate-200 hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+                <span>Learn More</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Personal Training -->
+          <div class="group rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=900&auto=format&fit=crop" 
+                     alt="Personal trainer guiding client in fitness workout" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-brand-orange text-white text-[11px] uppercase font-black px-3 py-1 rounded-full tracking-wider">
+                  1-on-1 Dedicated
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-brand-orange transition-colors">Personal Training</h3>
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  One-on-one training with a professional trainer, form correction, accountability, and personalized workout guidance.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <button onclick="openInfoModal('Personal Training', 'Achieve fastest results with dedicated one-on-one sessions. Each session is structured around your posture, injury history, lifestyle, and direct targets with biometric tracking.')" class="w-full py-2.5 rounded-lg bg-brand-border/60 hover:bg-brand-orange text-slate-200 hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+                <span>Learn More</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5: Cardio Training -->
+          <div class="group rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=900&auto=format&fit=crop" 
+                     alt="Female runner on high tech treadmill in gym" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-blue-600 text-white text-[11px] uppercase font-black px-3 py-1 rounded-full tracking-wider">
+                  Aerobic & V02
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-brand-orange transition-colors">Cardio Training</h3>
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Improve endurance, stamina, cardiovascular fitness, lung capacity, and overall daily vitality with smart cardio machines.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <button onclick="openInfoModal('Cardio Training Program', 'Features cutting-edge curved non-motorized treadmills, rowers, assault bikes, and stairmasters. Learn aerobic base building, tempo pacing, and HIIT threshold intervals.')" class="w-full py-2.5 rounded-lg bg-brand-border/60 hover:bg-brand-orange text-slate-200 hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+                <span>Learn More</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6: Functional Training -->
+          <div class="group rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between">
+            <div>
+              <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=900&auto=format&fit=crop" 
+                     alt="Athletic movement with kettlebell" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                <span class="absolute top-4 left-4 bg-emerald-600 text-white text-[11px] uppercase font-black px-3 py-1 rounded-full tracking-wider">
+                  Mobility & Agility
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-brand-orange transition-colors">Functional Training</h3>
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Improve mobility, balance, core strength, coordination, and everyday athletic resilience against injury.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <button onclick="openInfoModal('Functional Training Program', 'Train for real-life athleticism with battle ropes, suspension TRX straps, plyometric boxes, medicine balls, and kettlebell complexes to keep you agile and durable.')" class="w-full py-2.5 rounded-lg bg-brand-border/60 hover:bg-brand-orange text-slate-200 hover:text-white font-semibold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2">
+                <span>Learn More</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. WHY CHOOSE JONE FITNESS CLUB -->
+    <section class="py-24 bg-brand-dark relative border-y border-brand-border/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>The JFC Advantage</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            WHY TRAIN WITH <span class="text-gradient">US?</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            We deliver the ideal environment, certified guidance, and motivating energy to help you maintain consistency and crush your records.
+          </p>
+        </div>
+
+        <!-- 6 Feature Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all duration-300 group hover:bg-brand-card/90">
+            <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 border border-brand-orange/30 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-glow-orange">
+              <i data-lucide="dumbbell" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Modern Equipment</h3>
+            <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+              Train with top-tier biomechanically sound fitness equipment, selectorized pin machines, Olympic platforms, and clean dumbbells up to 50kg+.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all duration-300 group hover:bg-brand-card/90">
+            <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 border border-brand-orange/30 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-glow-orange">
+              <i data-lucide="user-check" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Professional Trainers</h3>
+            <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+              Get direct guidance from internationally certified fitness coaches who specialize in kinesiology, posture correction, and progressive load.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all duration-300 group hover:bg-brand-card/90">
+            <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 border border-brand-orange/30 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-glow-orange">
+              <i data-lucide="clipboard-list" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Personalized Plans</h3>
+            <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+              Workout routines and dietary guidelines adapted to your individual fitness milestones, schedule availability, and body composition.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all duration-300 group hover:bg-brand-card/90">
+            <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 border border-brand-orange/30 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-glow-orange">
+              <i data-lucide="heart-handshake" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Friendly Environment</h3>
+            <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+              Enjoy a non-intimidating, high-energy, and welcoming community of fitness enthusiasts supporting each other daily.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all duration-300 group hover:bg-brand-card/90">
+            <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 border border-brand-orange/30 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-glow-orange">
+              <i data-lucide="shield" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Flexible Membership</h3>
+            <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+              Choose membership terms customized for your work-life schedule with zero hidden maintenance fees and easy pause options.
+            </p>
+          </div>
+
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all duration-300 group hover:bg-brand-card/90">
+            <div class="w-14 h-14 rounded-2xl bg-brand-orange/10 border border-brand-orange/30 text-brand-orange flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-glow-orange">
+              <i data-lucide="sparkles" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Clean & Comfortable</h3>
+            <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+              Pristine training floor, sanitized locker rooms, dedicated shower stalls, purified hydration stations, and continuous air circulation.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. TRAINERS SECTION -->
+    <section id="trainers" class="py-24 bg-brand-black relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>World-Class Instructors</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            MEET OUR <span class="text-gradient">TRAINERS</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            Our certified professionals are committed to keeping you disciplined, safe, and continuously improving.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Trainer 1 -->
+          <div class="rounded-2xl bg-brand-card border border-brand-border overflow-hidden hover:border-brand-orange/60 transition-all duration-300 group">
+            <div class="relative h-80 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=900&auto=format&fit=crop" 
+                   alt="Alex Johnson - Strength & Conditioning Coach" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span class="text-xs bg-brand-orange/90 text-white font-bold px-2.5 py-1 rounded-md">8+ Yrs Exp</span>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold font-heading text-white">Alex Johnson</h3>
+              <p class="text-brand-orange text-xs font-semibold uppercase tracking-wider mt-1">Strength & Conditioning Coach</p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Specializes in barbell mastery, powerlifting mechanics, and athletic strength development.
+              </p>
+              <!-- Social Icons -->
+              <div class="mt-5 pt-4 border-t border-brand-border flex items-center justify-center space-x-3 text-slate-400">
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer 2 -->
+          <div class="rounded-2xl bg-brand-card border border-brand-border overflow-hidden hover:border-brand-orange/60 transition-all duration-300 group">
+            <div class="relative h-80 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=900&auto=format&fit=crop" 
+                   alt="Sarah Miller - Fitness & Weight Loss Coach" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span class="text-xs bg-brand-amber text-black font-bold px-2.5 py-1 rounded-md">6+ Yrs Exp</span>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold font-heading text-white">Sarah Miller</h3>
+              <p class="text-brand-amber text-xs font-semibold uppercase tracking-wider mt-1">Fitness & Weight Loss Coach</p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Expert in female strength conditioning, metabolic fat burn, and sustainable lifestyle habit tracking.
+              </p>
+              <!-- Social Icons -->
+              <div class="mt-5 pt-4 border-t border-brand-border flex items-center justify-center space-x-3 text-slate-400">
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer 3 -->
+          <div class="rounded-2xl bg-brand-card border border-brand-border overflow-hidden hover:border-brand-orange/60 transition-all duration-300 group">
+            <div class="relative h-80 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=900&auto=format&fit=crop" 
+                   alt="Mike Williams - Personal Trainer" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span class="text-xs bg-brand-orange/90 text-white font-bold px-2.5 py-1 rounded-md">7+ Yrs Exp</span>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold font-heading text-white">Mike Williams</h3>
+              <p class="text-brand-orange text-xs font-semibold uppercase tracking-wider mt-1">Personal Trainer</p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Hypertrophy specialist focused on physique transformations, muscle building, and body recomposition.
+              </p>
+              <!-- Social Icons -->
+              <div class="mt-5 pt-4 border-t border-brand-border flex items-center justify-center space-x-3 text-slate-400">
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer 4 -->
+          <div class="rounded-2xl bg-brand-card border border-brand-border overflow-hidden hover:border-brand-orange/60 transition-all duration-300 group">
+            <div class="relative h-80 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=900&auto=format&fit=crop" 
+                   alt="David Smith - Functional Training Coach" 
+                   class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span class="text-xs bg-emerald-500 text-black font-bold px-2.5 py-1 rounded-md">5+ Yrs Exp</span>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold font-heading text-white">David Smith</h3>
+              <p class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mt-1">Functional Training Coach</p>
+              <p class="text-slate-400 text-xs mt-3 leading-relaxed">
+                Mobility expert combining calisthenics, functional kinetic patterns, and joint rehabilitation.
+              </p>
+              <!-- Social Icons -->
+              <div class="mt-5 pt-4 border-t border-brand-border flex items-center justify-center space-x-3 text-slate-400">
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                <a href="#trainers" class="hover:text-brand-orange transition-colors p-1.5"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 10. FITNESS GOALS SECTION ("YOUR GOAL. OUR SUPPORT.") -->
+    <section class="py-24 bg-brand-dark border-y border-brand-border/40 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>Tailored Pathways</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            YOUR GOAL. <span class="text-gradient">OUR SUPPORT.</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            Select what you are striving for and discover how Jone Fitness Club ensures you conquer each stage.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all cursor-pointer group text-center" onclick="showGoalGuidance('Lose Weight')">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-brand-orange mb-5 group-hover:scale-110 group-hover:bg-brand-orange group-hover:text-white transition-all">
+              <i data-lucide="flame" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Lose Weight</h3>
+            <p class="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Targeted fat mobilization, high metabolic burn, calorie deficit balancing, and continuous body fat check-ins.
+            </p>
+            <span class="inline-flex items-center text-xs font-bold text-brand-orange mt-4 group-hover:underline">
+              View Strategy &rarr;
+            </span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all cursor-pointer group text-center" onclick="showGoalGuidance('Build Muscle')">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-brand-amber mb-5 group-hover:scale-110 group-hover:bg-brand-amber group-hover:text-black transition-all">
+              <i data-lucide="biceps" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Build Muscle</h3>
+            <p class="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Hypertrophy routines designed for clean muscular volume, dense aesthetics, and structured micro-cycles.
+            </p>
+            <span class="inline-flex items-center text-xs font-bold text-brand-amber mt-4 group-hover:underline">
+              View Strategy &rarr;
+            </span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all cursor-pointer group text-center" onclick="showGoalGuidance('Increase Strength')">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-500 mb-5 group-hover:scale-110 group-hover:bg-red-500 group-hover:text-white transition-all">
+              <i data-lucide="dumbbell" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Increase Strength</h3>
+            <p class="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Central nervous system optimization, raw lifting power, barbell progression, and core stability drills.
+            </p>
+            <span class="inline-flex items-center text-xs font-bold text-red-400 mt-4 group-hover:underline">
+              View Strategy &rarr;
+            </span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-orange/60 transition-all cursor-pointer group text-center" onclick="showGoalGuidance('Improve Fitness')">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-5 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all">
+              <i data-lucide="heart-pulse" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-xl font-bold font-heading text-white">Improve Fitness</h3>
+            <p class="mt-3 text-slate-400 text-xs sm:text-sm leading-relaxed">
+              High daily energy, endurance stamina, fluid joint flexibility, stress relief, and heart longevity.
+            </p>
+            <span class="inline-flex items-center text-xs font-bold text-blue-400 mt-4 group-hover:underline">
+              View Strategy &rarr;
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Bonus Interactive Widget: Quick BMI & Calorie Calculator -->
+        <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-brand-card/90 border border-brand-border max-w-4xl mx-auto shadow-2xl">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-left">
+              <span class="text-xs uppercase tracking-widest text-brand-orange font-bold">Interactive Tool</span>
+              <h3 class="text-xl font-bold text-white font-heading mt-1">Quick Fitness & BMI Calculator</h3>
+              <p class="text-xs text-slate-400 mt-1">Check your Body Mass Index (BMI) and recommended initial training focus.</p>
+            </div>
+            <div class="w-full md:w-auto flex flex-wrap sm:flex-nowrap gap-3 items-center">
+              <input type="number" id="calcHeight" placeholder="Height (cm)" class="bg-brand-dark text-white text-xs px-3.5 py-2.5 rounded-lg border border-brand-border focus:border-brand-orange outline-none w-full sm:w-32">
+              <input type="number" id="calcWeight" placeholder="Weight (kg)" class="bg-brand-dark text-white text-xs px-3.5 py-2.5 rounded-lg border border-brand-border focus:border-brand-orange outline-none w-full sm:w-32">
+              <button onclick="calculateBMI()" class="w-full sm:w-auto px-5 py-2.5 bg-brand-orange hover:bg-orange-600 text-white font-bold text-xs uppercase rounded-lg shadow-glow-orange transition-all whitespace-nowrap">
+                Calculate
+              </button>
+            </div>
+          </div>
+          <div id="bmiResultBox" class="hidden mt-4 p-4 rounded-xl bg-brand-dark/80 border border-brand-orange/40 text-xs flex items-center justify-between flex-wrap gap-2">
+            <span id="bmiResultText" class="font-semibold text-slate-200"></span>
+            <span id="bmiAdviceText" class="text-brand-amber font-bold"></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. MEMBERSHIP PLANS -->
+    <section id="membership" class="py-24 bg-brand-black relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>Flexible Investment</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            MEMBERSHIP <span class="text-gradient">PLANS</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            Transparent pricing with no unexpected join fees. Choose the ideal tier for your fitness lifestyle.
+          </p>
+
+          <!-- Billing Period Switcher -->
+          <div class="mt-8 inline-flex items-center p-1.5 rounded-full bg-brand-card border border-brand-border">
+            <button id="billMonthly" onclick="setBilling('monthly')" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-brand-orange text-white">
+              Monthly
+            </button>
+            <button id="billYearly" onclick="setBilling('yearly')" class="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-slate-400 hover:text-white transition-all flex items-center gap-1.5">
+              <span>Annual</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-brand-amber text-black font-black">SAVE 20%</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 Pricing Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- Card 1: BASIC -->
+          <div class="rounded-3xl bg-brand-card border border-brand-border p-8 flex flex-col justify-between hover:border-brand-orange/40 transition-all duration-300">
+            <div>
+              <div class="flex justify-between items-center">
+                <h3 class="text-xl font-black font-heading uppercase text-white">BASIC</h3>
+                <span class="text-xs uppercase font-bold text-slate-400 bg-brand-dark px-3 py-1 rounded-full border border-brand-border">Starter</span>
+              </div>
+              <p class="text-slate-400 text-xs mt-2">Essential gym access for disciplined independent lifters.</p>
+              
+              <div class="mt-6 flex items-baseline">
+                <span class="text-4xl sm:text-5xl font-black font-heading text-white" id="priceBasic">$29</span>
+                <span class="text-slate-400 text-sm font-semibold ml-2" id="periodBasic">/ month</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="mt-8 space-y-4 text-sm text-slate-300">
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                  <span>Gym Access (All Hours)</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                  <span>Full Cardio Area</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                  <span>Strength & Free Weights Equipment</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                  <span>Secure Locker Access & Showers</span>
+                </li>
+                <li class="flex items-center gap-3 text-slate-500">
+                  <i data-lucide="x" class="w-5 h-5 flex-shrink-0"></i>
+                  <span>No Group Classes included</span>
+                </li>
+                <li class="flex items-center gap-3 text-slate-500">
+                  <i data-lucide="x" class="w-5 h-5 flex-shrink-0"></i>
+                  <span>No Personal Training</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4">
+              <button onclick="openJoinModal('Basic Plan ($29/mo)')" class="w-full py-3.5 rounded-xl bg-brand-border/80 hover:bg-brand-border text-white font-bold font-heading text-xs uppercase tracking-wider transition-colors">
+                GET STARTED
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: PRO (Featured) -->
+          <div class="relative rounded-3xl bg-brand-card border-2 border-brand-orange p-8 flex flex-col justify-between shadow-glow-orange lg:-translate-y-3">
+            <!-- Popular Badge -->
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-orange to-brand-amber text-white font-black text-xs uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
+              MOST POPULAR
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center">
+                <h3 class="text-xl font-black font-heading uppercase text-white">PRO</h3>
+                <span class="text-xs uppercase font-bold text-brand-orange bg-brand-orange/10 px-3 py-1 rounded-full border border-brand-orange/30">Recommended</span>
+              </div>
+              <p class="text-slate-400 text-xs mt-2">Comprehensive guidance for faster results & group energy.</p>
+              
+              <div class="mt-6 flex items-baseline">
+                <span class="text-4xl sm:text-5xl font-black font-heading text-brand-orange" id="pricePro">$49</span>
+                <span class="text-slate-400 text-sm font-semibold ml-2" id="periodPro">/ month</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="mt-8 space-y-4 text-sm text-slate-200">
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-brand-orange flex-shrink-0"></i>
+                  <span class="font-medium text-white">Everything in Basic</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-brand-orange flex-shrink-0"></i>
+                  <span>Unlimited Group Fitness Classes</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-brand-orange flex-shrink-0"></i>
+                  <span>Personalized Workout Plan</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-brand-orange flex-shrink-0"></i>
+                  <span>Monthly Body & Fitness Assessment</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-brand-orange flex-shrink-0"></i>
+                  <span>Sauna & Recovery Lounge Access</span>
+                </li>
+                <li class="flex items-center gap-3 text-slate-500">
+                  <i data-lucide="x" class="w-5 h-5 flex-shrink-0"></i>
+                  <span>Dedicated 1-on-1 Trainer not included</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4">
+              <button onclick="openJoinModal('Pro Plan ($49/mo)')" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-orange to-brand-amber hover:from-orange-600 hover:to-brand-orange text-white font-black font-heading text-sm uppercase tracking-wider shadow-glow-orange transition-all duration-300 hover:scale-102">
+                JOIN PRO
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: PREMIUM -->
+          <div class="rounded-3xl bg-brand-card border border-brand-border p-8 flex flex-col justify-between hover:border-brand-orange/40 transition-all duration-300">
+            <div>
+              <div class="flex justify-between items-center">
+                <h3 class="text-xl font-black font-heading uppercase text-white">PREMIUM</h3>
+                <span class="text-xs uppercase font-bold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/30">VIP Elite</span>
+              </div>
+              <p class="text-slate-400 text-xs mt-2">Maximum accountability with private coaching & nutrition.</p>
+              
+              <div class="mt-6 flex items-baseline">
+                <span class="text-4xl sm:text-5xl font-black font-heading text-white" id="pricePremium">$79</span>
+                <span class="text-slate-400 text-sm font-semibold ml-2" id="periodPremium">/ month</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="mt-8 space-y-4 text-sm text-slate-300">
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                  <span class="font-medium text-white">Everything in Pro</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                  <span class="text-white font-semibold">4 Personal Training Sessions / Month</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                  <span>Custom Nutrition Guidance & Meal Plans</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                  <span>Weekly Biometric Progress Tracking</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                  <span>Priority Support & Free Guest Passes (2/mo)</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <i data-lucide="check" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                  <span>Free Gym Bag + JFC Shaker Cup</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4">
+              <button onclick="openJoinModal('Premium Plan ($79/mo)')" class="w-full py-3.5 rounded-xl bg-brand-border/80 hover:bg-brand-border text-white font-bold font-heading text-xs uppercase tracking-wider transition-colors">
+                JOIN PREMIUM
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Customizable note -->
+        <p class="mt-8 text-center text-xs text-slate-500 italic">
+          * Membership pricing can be customized according to your actual gym plans. Student and corporate group discounts available upon inquiry.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- 7. CALL-TO-ACTION SECTION -->
+    <section class="relative py-20 overflow-hidden bg-gradient-to-r from-red-950 via-brand-card to-black border-y border-brand-orange/40">
+      <div class="absolute inset-0 bg-[radial-gradient(#ff4b00_1px,transparent_1px)] [background-size:20px_20px] opacity-15"></div>
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-black font-heading uppercase text-white tracking-tight leading-tight">
+          READY TO START YOUR <span class="text-gradient">FITNESS JOURNEY?</span>
+        </h2>
+        <p class="mt-6 text-base sm:text-xl text-slate-300 max-w-2xl mx-auto">
+          “Your goals are waiting. Take the first step today and become part of the Jone Fitness Club community.”
+        </p>
+        <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="openJoinModal('CTA Hero Sign-up')" class="w-full sm:w-auto px-9 py-4 rounded-xl bg-gradient-to-r from-brand-orange to-brand-amber text-white font-black font-heading text-sm uppercase tracking-wider shadow-glow-strong hover:scale-105 transition-transform">
+            JOIN JONE FITNESS CLUB
+          </button>
+          <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold font-heading text-sm uppercase tracking-wider transition-colors">
+            CONTACT US
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GALLERY -->
+    <section id="gallery" class="py-24 bg-brand-black relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>Visual Tour</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            CLUB <span class="text-gradient">GALLERY</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            Take a look inside our high-energy workout studio, world-class equipment, and active community of male and female athletes.
+          </p>
+
+          <!-- Filter categories -->
+          <div class="mt-8 flex flex-wrap justify-center gap-2" id="galleryFilters">
+            <button onclick="filterGallery('all', this)" class="gallery-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-orange text-white">All</button>
+            <button onclick="filterGallery('weights', this)" class="gallery-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-card text-slate-400 hover:text-white border border-brand-border">Weight Training</button>
+            <button onclick="filterGallery('cardio', this)" class="gallery-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-card text-slate-400 hover:text-white border border-brand-border">Cardio</button>
+            <button onclick="filterGallery('group', this)" class="gallery-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-card text-slate-400 hover:text-white border border-brand-border">Group & Functional</button>
+            <button onclick="filterGallery('interior', this)" class="gallery-btn px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-card text-slate-400 hover:text-white border border-brand-border">Gym Interior</button>
+          </div>
+        </div>
+
+        <!-- Responsive Grid with 8 Images -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="galleryGrid">
+          
+          <!-- Image 1 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="weights" onclick="openLightbox('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1400', 'Weight Training - Deadlift Zone')">
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop" alt="Weight training barbell" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Weight Training</span>
+              <span class="text-sm font-bold text-white">Barbell Heavy Zone</span>
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="weights" onclick="openLightbox('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1400', 'Dumbbell Workouts & Bicep Training')">
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=600&auto=format&fit=crop" alt="Dumbbell workouts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Dumbbell Workouts</span>
+              <span class="text-sm font-bold text-white">Free Weight Area</span>
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="cardio" onclick="openLightbox('https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=1400', 'Treadmill & Cardio Conditioning')">
+            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?q=80&w=600&auto=format&fit=crop" alt="Treadmill training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Cardio Workouts</span>
+              <span class="text-sm font-bold text-white">Treadmill Endurance</span>
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="group" onclick="openLightbox('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1400', 'Group Kettlebell & HIIT Workout')">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=crop" alt="Group workouts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Group Workouts</span>
+              <span class="text-sm font-bold text-white">Kettlebell Conditioning</span>
+            </div>
+          </div>
+
+          <!-- Image 5 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="group" onclick="openLightbox('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1400', '1-on-1 Personal Training Session')">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=600&auto=format&fit=crop" alt="Personal training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Personal Training</span>
+              <span class="text-sm font-bold text-white">Guided Progression</span>
+            </div>
+          </div>
+
+          <!-- Image 6 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="interior" onclick="openLightbox('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1400', 'Jone Fitness Club Main Floor & Interior')">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=600&auto=format&fit=crop" alt="Gym interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Gym Interior</span>
+              <span class="text-sm font-bold text-white">Modern Equipment Floor</span>
+            </div>
+          </div>
+
+          <!-- Image 7 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="weights" onclick="openLightbox('https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1400', 'Strength Training Cable Station')">
+            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=600&auto=format&fit=crop" alt="Strength training female athlete" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Strength Training</span>
+              <span class="text-sm font-bold text-white">Cable & Resistance Work</span>
+            </div>
+          </div>
+
+          <!-- Image 8 -->
+          <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer border border-brand-border" data-category="cardio" onclick="openLightbox('https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1400', 'Cardio & Core Agility Station')">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop" alt="Cardio workouts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+              <span class="text-xs text-brand-orange uppercase font-bold">Cardio Workouts</span>
+              <span class="text-sm font-bold text-white">Metabolic Agility</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+          <button onclick="openInfoModal('Club Facility Tour', 'Jone Fitness Club spans over 12,000 sq.ft of dedicated fitness zones including an Olympic weightlifting section, cardio deck with 25+ machines, CrossFit & functional turf, boxing bag station, recovery sauna, and smoothie bar.')" class="px-8 py-3 rounded-xl bg-brand-card hover:bg-brand-border text-white border border-brand-border font-bold font-heading text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 hover:border-brand-orange">
+            <i data-lucide="eye" class="w-4 h-4 text-brand-orange"></i>
+            <span>VIEW FULL GALLERY & SPECS</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. TESTIMONIALS -->
+    <section id="testimonials" class="py-24 bg-brand-dark border-t border-brand-border/40 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>Verified Results</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            WHAT OUR <span class="text-gradient">MEMBERS SAY</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            Real feedback from members who show up, stay consistent, and transformed their lives at Jone Fitness Club.
+          </p>
+        </div>
+
+        <!-- 3 Testimonial Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Testimonial 1 -->
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border relative flex flex-col justify-between hover:border-brand-orange/40 transition-colors">
+            <div>
+              <!-- Stars -->
+              <div class="flex text-amber-400 gap-1 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed italic">
+                “Jone Fitness Club has completely changed the way I approach fitness. The trainers are supportive and the atmosphere keeps me motivated every single workout.”
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange text-brand-orange font-bold flex items-center justify-center text-sm font-heading">
+                JR
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">James R.</h4>
+                <p class="text-xs text-slate-400">Member for 1.5 Years • Strength</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border relative flex flex-col justify-between hover:border-brand-orange/40 transition-colors">
+            <div>
+              <!-- Stars -->
+              <div class="flex text-amber-400 gap-1 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed italic">
+                “I love the equipment, atmosphere, and personalized guidance. It is a great place to stay consistent with my workouts and stay energized during hectic work weeks.”
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brand-amber/20 border border-brand-amber text-brand-amber font-bold flex items-center justify-center text-sm font-heading">
+                ET
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Emily T.</h4>
+                <p class="text-xs text-slate-400">Member for 9 Months • Weight Loss</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="p-8 rounded-2xl bg-brand-card border border-brand-border relative flex flex-col justify-between hover:border-brand-orange/40 transition-colors">
+            <div>
+              <!-- Stars -->
+              <div class="flex text-amber-400 gap-1 mb-4">
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed italic">
+                “The trainers helped me understand proper workout techniques and create a routine that works for me without joint pain. Best fitness club I’ve ever joined.”
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-border/60 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-red-500/20 border border-red-500 text-red-500 font-bold flex items-center justify-center text-sm font-heading">
+                MK
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Michael K.</h4>
+                <p class="text-xs text-slate-400">Member for 2 Years • Hypertrophy</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 11. CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-brand-black relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center space-x-2 text-brand-orange font-bold text-xs uppercase tracking-widest mb-2">
+            <span>Get Started</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase text-white tracking-tight">
+            START YOUR <span class="text-gradient">FITNESS JOURNEY TODAY</span>
+          </h2>
+          <p class="mt-4 text-slate-400 text-sm sm:text-base">
+            Reach out directly for gym tours, program inquiries, or to activate your free 1-day guest pass.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Contact Form -->
+          <div class="lg:col-span-7 bg-brand-card p-8 sm:p-10 rounded-3xl border border-brand-border shadow-2xl">
+            <h3 class="text-2xl font-bold font-heading text-white mb-2">Send Us a Message</h3>
+            <p class="text-xs text-slate-400 mb-6">Our team will respond back via WhatsApp or Call within 2 business hours.</p>
+
+            <form id="gymContactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-1.5" for="formName">Full Name *</label>
+                <input type="text" id="formName" required placeholder="John Doe" class="w-full bg-brand-dark text-white text-sm px-4 py-3 rounded-xl border border-brand-border focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-1.5" for="formPhone">Phone Number *</label>
+                  <input type="tel" id="formPhone" required placeholder="+91 98765 43210" class="w-full bg-brand-dark text-white text-sm px-4 py-3 rounded-xl border border-brand-border focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors">
+                </div>
+                <div>
+                  <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-1.5" for="formEmail">Email Address *</label>
+                  <input type="email" id="formEmail" required placeholder="john@example.com" class="w-full bg-brand-dark text-white text-sm px-4 py-3 rounded-xl border border-brand-border focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-1.5" for="formProgram">Select Program</label>
+                <select id="formProgram" class="w-full bg-brand-dark text-white text-sm px-4 py-3 rounded-xl border border-brand-border focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors">
+                  <option value="General Inquiry">General Gym Membership</option>
+                  <option value="Strength Training">Strength Training</option>
+                  <option value="Weight Loss">Weight Loss & Fat Reduction</option>
+                  <option value="Muscle Building">Muscle Building / Hypertrophy</option>
+                  <option value="Personal Training">Personal Training (1-on-1)</option>
+                  <option value="Cardio Training">Cardio & Stamina</option>
+                  <option value="Functional Training">Functional Training</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs uppercase font-bold text-slate-300 tracking-wider mb-1.5" for="formMessage">Message</label>
+                <textarea id="formMessage" rows="4" placeholder="Tell us about your fitness targets, preferred workout times, or questions..." class="w-full bg-brand-dark text-white text-sm px-4 py-3 rounded-xl border border-brand-border focus:border-brand-orange focus:ring-1 focus:ring-brand-orange outline-none transition-colors"></textarea>
+              </div>
+
+              <div id="contactSuccessMsg" class="hidden p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-xs font-semibold">
+                ✓ Thank you! Your message has been sent. Our fitness advisor will reach out to you shortly.
+              </div>
+
+              <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-orange to-brand-amber hover:from-orange-600 hover:to-brand-orange text-white font-bold font-heading text-sm uppercase tracking-wider shadow-glow-orange transition-all duration-300 flex items-center justify-center gap-2">
+                <span>SEND MESSAGE</span>
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Location Info & Working Hours & Map -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <div class="bg-brand-card p-6 sm:p-8 rounded-3xl border border-brand-border space-y-5">
+              <div class="border-b border-brand-border pb-4">
+                <span class="text-xs uppercase font-bold text-brand-orange tracking-widest">Club Information</span>
+                <h3 class="text-2xl font-black font-heading text-white mt-1">Jone Fitness Club</h3>
+                <p class="text-xs text-slate-400">Indian Fitness Club • Central Branch</p>
+              </div>
+
+              <div class="space-y-4 text-sm">
+                <div class="flex items-start gap-3">
+                  <div class="p-2.5 rounded-lg bg-brand-dark text-brand-orange border border-brand-border mt-0.5">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wide">Address</h4>
+                    <p class="text-slate-300 text-xs mt-0.5">[Add Your Gym Address: Ring Road, Civil Lines, Central Hub, City, PIN - 474001]</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="p-2.5 rounded-lg bg-brand-dark text-brand-orange border border-brand-border mt-0.5">
+                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wide">Phone</h4>
+                    <p class="text-slate-300 text-xs mt-0.5">+91 98765 43210 / +91 91234 56789</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="p-2.5 rounded-lg bg-brand-dark text-brand-orange border border-brand-border mt-0.5">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wide">Email</h4>
+                    <p class="text-slate-300 text-xs mt-0.5">contact@jonefitnessclub.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="p-2.5 rounded-lg bg-brand-dark text-brand-orange border border-brand-border mt-0.5">
+                    <i data-lucide="clock" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wide">Opening Hours</h4>
+                    <p class="text-slate-300 text-xs mt-0.5"><strong>Monday – Saturday:</strong> 6:00 AM – 10:00 PM</p>
+                    <p class="text-slate-300 text-xs"><strong>Sunday:</strong> 7:00 AM – 1:00 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stylized Google Maps Container -->
+            <div class="h-64 rounded-3xl overflow-hidden border border-brand-border relative bg-brand-dark">
+              <iframe 
+                title="Jone Fitness Club Google Maps Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114542.44390666992!2d78.10986705509923!3d26.21639912759905!2m3!1f0!2f0!3f0!3m2!1i1024!2i78f13.1!3m3!1m2!1s0x3976c5d1792291fb%3A0xff4e456f35da341!2sGwalior%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                class="w-full h-full border-0 filter invert contrast-125 opacity-80 hover:opacity-100 transition-opacity" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="absolute bottom-3 left-3 bg-brand-card/90 text-white text-[11px] px-3 py-1 rounded-md border border-brand-border pointer-events-none">
+                📍 Jone Fitness Club Central Studio
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 12. WHATSAPP BUTTON (Floating bottom-right) -->
+  <a 
+    id="whatsappFloatingBtn"
+    href="https://wa.me/919876543210?text=Hello%20Jone%20Fitness%20Club%2C%20I%20would%20like%20to%20know%20more%20about%20your%20membership%20plans%20and%20gym%20programs." 
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Chat with Jone Fitness Club on WhatsApp"
+    class="fixed bottom-6 right-6 z-50 p-4 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 group focus:outline-none focus:ring-4 focus:ring-emerald-400/40"
+  >
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out font-bold text-xs pr-0 group-hover:pr-2">
+      Chat with us on WhatsApp
+    </span>
+    <!-- WhatsApp SVG Icon -->
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- 13. FOOTER -->
+  <footer class="bg-black border-t border-brand-border/60 text-slate-400 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange to-red-600 flex items-center justify-center text-white font-heading font-black text-xl shadow-glow-orange">
+              JFC
+            </div>
+            <div>
+              <span class="text-xl font-black font-heading tracking-tight text-white">
+                JONE<span class="text-brand-orange ml-1">FITNESS CLUB</span>
+              </span>
+              <p class="text-[10px] uppercase tracking-widest text-slate-400">Indian Fitness Club</p>
+            </div>
+          </div>
+          
+          <p class="text-sm text-slate-300 font-semibold italic">
+            “Train Hard. Stay Strong. Be Better.”
+          </p>
+
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Empowering individuals through science-based fitness, progressive strength training, supportive culture, and modern equipment.
+          </p>
+
+          <!-- Social Icons -->
+          <div class="flex items-center space-x-3 pt-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-brand-card hover:bg-brand-orange text-slate-300 hover:text-white flex items-center justify-center border border-brand-border transition-colors">
+              <i data-lucide="facebook" class="w-4 h-4"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-brand-card hover:bg-brand-orange text-slate-300 hover:text-white flex items-center justify-center border border-brand-border transition-colors">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-brand-card hover:bg-brand-orange text-slate-300 hover:text-white flex items-center justify-center border border-brand-border transition-colors">
+              <i data-lucide="youtube" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-9 h-9 rounded-lg bg-brand-card hover:bg-brand-orange text-slate-300 hover:text-white flex items-center justify-center border border-brand-border transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" class="hover:text-brand-orange transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-brand-orange transition-colors">About Us</a></li>
+            <li><a href="#programs" class="hover:text-brand-orange transition-colors">Programs</a></li>
+            <li><a href="#trainers" class="hover:text-brand-orange transition-colors">Trainers</a></li>
+            <li><a href="#membership" class="hover:text-brand-orange transition-colors">Membership</a></li>
+            <li><a href="#gallery" class="hover:text-brand-orange transition-colors">Gallery</a></li>
+            <li><a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Services</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#programs" class="hover:text-brand-orange transition-colors">Strength Training</a></li>
+            <li><a href="#programs" class="hover:text-brand-orange transition-colors">Personal Training</a></li>
+            <li><a href="#programs" class="hover:text-brand-orange transition-colors">Weight Loss Coaching</a></li>
+            <li><a href="#programs" class="hover:text-brand-orange transition-colors">Muscle Building</a></li>
+            <li><a href="#programs" class="hover:text-brand-orange transition-colors">Cardio Workouts</a></li>
+            <li><a href="#programs" class="hover:text-brand-orange transition-colors">Functional Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Hours -->
+        <div>
+          <h4 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-xs">
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-orange"></i>
+              <span>+91 98765 43210</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-brand-orange"></i>
+              <span>info@jonefitnessclub.com</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-orange mt-0.5"></i>
+              <span>[Your Gym Address, Central Hub]</span>
+            </li>
+            <li class="pt-2 text-slate-500">
+              Mon-Sat: 6:00AM - 10:00PM<br>Sun: 7:00AM - 1:00PM
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="mt-12 pt-8 border-t border-brand-border/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+          © 2026 Jone Fitness Club (Indian Fitness Club). All Rights Reserved.
+        </div>
+        <div class="flex space-x-6">
+          <a href="#about" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="#about" class="hover:text-slate-300">Terms of Service</a>
+          <a href="#contact" class="hover:text-slate-300">Gym Rules</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: Join Now & Plan Registration -->
+  <div id="joinModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-orange/60 rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-glow-orange animate-in fade-in zoom-in duration-200">
+      <button onclick="closeJoinModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="text-left mb-6">
+        <span class="text-xs uppercase font-bold text-brand-orange tracking-wider">Fast-Track Pass</span>
+        <h3 class="text-2xl font-black font-heading text-white mt-1">Join Jone Fitness Club</h3>
+        <p class="text-xs text-slate-400 mt-1">Selected: <strong id="modalSelectedPlan" class="text-brand-amber">Pro Membership</strong></p>
+      </div>
+
+      <form onsubmit="handleJoinSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs uppercase font-bold text-slate-300 mb-1" for="joinName">Your Name</label>
+          <input type="text" id="joinName" required placeholder="Alexander Great" class="w-full bg-brand-dark text-white text-sm px-4 py-2.5 rounded-xl border border-brand-border focus:border-brand-orange outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-bold text-slate-300 mb-1" for="joinPhone">WhatsApp / Mobile Number</label>
+          <input type="tel" id="joinPhone" required placeholder="+91 98765 43210" class="w-full bg-brand-dark text-white text-sm px-4 py-2.5 rounded-xl border border-brand-border focus:border-brand-orange outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-bold text-slate-300 mb-1" for="joinGoal">Primary Fitness Goal</label>
+          <select id="joinGoal" class="w-full bg-brand-dark text-white text-sm px-4 py-2.5 rounded-xl border border-brand-border focus:border-brand-orange outline-none">
+            <option>Build Lean Muscle</option>
+            <option>Rapid Weight Loss</option>
+            <option>General Athletic Fitness</option>
+            <option>Power & Strength</option>
+          </select>
+        </div>
+
+        <div id="joinModalMsg" class="hidden p-3 rounded-lg bg-emerald-950 text-emerald-300 text-xs font-semibold">
+          🎉 Welcome to Jone Fitness Club! We will contact you immediately to schedule your orientation.
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-amber text-white font-bold font-heading uppercase text-xs tracking-wider shadow-glow-orange hover:scale-102 transition-transform">
+          CONFIRM & ACTIVATE PASS
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: General Info Modal (For Learn More triggers) -->
+  <div id="infoModal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
+      <button onclick="closeInfoModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <h3 id="infoModalTitle" class="text-xl font-bold font-heading text-white mb-3">Program Details</h3>
+      <p id="infoModalBody" class="text-sm text-slate-300 leading-relaxed mb-6"></p>
+      <button onclick="closeInfoModal(); openJoinModal('Program Inquiry');" class="w-full py-3 rounded-xl bg-brand-orange hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider transition-colors">
+        Inquire About This Program
+      </button>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL: For Gallery Items -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
+    <button class="absolute top-6 right-6 text-white text-3xl font-bold hover:text-brand-orange">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <div class="max-w-4xl max-h-[85vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <img id="lightboxImg" src="" alt="Enlarged fitness photo" class="max-h-[75vh] w-auto rounded-2xl border border-brand-border object-contain shadow-glow-orange">
+      <p id="lightboxCaption" class="mt-4 text-slate-200 font-heading font-semibold text-sm sm:text-base text-center"></p>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+
+    // Mobile Hamburger Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function toggleMobileMenu() {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+      }
+    }
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Billing Switcher (Monthly / Yearly Discount)
+    let currentBilling = 'monthly';
+    function setBilling(type) {
+      currentBilling = type;
+      const btnMonthly = document.getElementById('billMonthly');
+      const btnYearly = document.getElementById('billYearly');
+      const priceBasic = document.getElementById('priceBasic');
+      const pricePro = document.getElementById('pricePro');
+      const pricePremium = document.getElementById('pricePremium');
+      const periodBasic = document.getElementById('periodBasic');
+      const periodPro = document.getElementById('periodPro');
+      const periodPremium = document.getElementById('periodPremium');
+
+      if (type === 'yearly') {
+        btnYearly.classList.add('bg-brand-orange', 'text-white');
+        btnYearly.classList.remove('text-slate-400');
+        btnMonthly.classList.remove('bg-brand-orange', 'text-white');
+        btnMonthly.classList.add('text-slate-400');
+
+        priceBasic.textContent = '$23';
+        pricePro.textContent = '$39';
+        pricePremium.textContent = '$63';
+
+        periodBasic.textContent = '/ month (billed yearly)';
+        periodPro.textContent = '/ month (billed yearly)';
+        periodPremium.textContent = '/ month (billed yearly)';
+      } else {
+        btnMonthly.classList.add('bg-brand-orange', 'text-white');
+        btnMonthly.classList.remove('text-slate-400');
+        btnYearly.classList.remove('bg-brand-orange', 'text-white');
+        btnYearly.classList.add('text-slate-400');
+
+        priceBasic.textContent = '$29';
+        pricePro.textContent = '$49';
+        pricePremium.textContent = '$79';
+
+        periodBasic.textContent = '/ month';
+        periodPro.textContent = '/ month';
+        periodPremium.textContent = '/ month';
+      }
+    }
+
+    // Gallery Filter
+    function filterGallery(category, clickedBtn) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.gallery-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-orange', 'text-white');
+        btn.classList.add('bg-brand-card', 'text-slate-400', 'border', 'border-brand-border');
+      });
+      clickedBtn.classList.remove('bg-brand-card', 'text-slate-400', 'border', 'border-brand-border');
+      clickedBtn.classList.add('bg-brand-orange', 'text-white');
+
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox handlers
+    function openLightbox(imgSrc, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      img.src = imgSrc;
+      cap.textContent = caption;
+      modal.classList.remove('hidden');
+    }
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+    }
+
+    // Info Modal
+    function openInfoModal(title, content) {
+      document.getElementById('infoModalTitle').textContent = title;
+      document.getElementById('infoModalBody').textContent = content;
+      document.getElementById('infoModal').classList.remove('hidden');
+    }
+    function closeInfoModal() {
+      document.getElementById('infoModal').classList.add('hidden');
+    }
+
+    // Join / Plan Modal
+    function openJoinModal(planName) {
+      document.getElementById('modalSelectedPlan').textContent = planName;
+      document.getElementById('joinModalMsg').classList.add('hidden');
+      document.getElementById('joinModal').classList.remove('hidden');
+    }
+    function closeJoinModal() {
+      document.getElementById('joinModal').classList.add('hidden');
+    }
+    function handleJoinSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('joinModalMsg');
+      msg.classList.remove('hidden');
+      setTimeout(() => {
+        closeJoinModal();
+      }, 2200);
+    }
+
+    // Goal guidance trigger
+    function showGoalGuidance(goalName) {
+      const details = {
+        'Lose Weight': 'Our Weight Loss blueprint integrates caloric balance monitoring, daily step objectives, HIIT cardiovascular training, and resistance exercises to safeguard lean muscle while accelerating fat metabolism.',
+        'Build Muscle': 'Hypertrophy program follows progressive overload across 8-12 rep ranges, paired with high-protein nutritional targets, recovery scheduling, and periodic 1RM adjustments.',
+        'Increase Strength': 'Focuses on multi-joint kinetic movements: Squats, Bench Press, Deadlifts, and Overhead Presses with calibrated rest intervals and neuromuscular adaptation.',
+        'Improve Fitness': 'A holistic athletic regimen combining cardiovascular endurance, dynamic flexibility drills, core strength, and restorative breathing to elevate daily energy levels.'
+      };
+      openInfoModal(`${goalName} Blueprint`, details[goalName] || 'Tailored coaching crafted specifically for your body type and performance goals.');
+    }
+
+    // BMI Calculator
+    function calculateBMI() {
+      const hCm = parseFloat(document.getElementById('calcHeight').value);
+      const wKg = parseFloat(document.getElementById('calcWeight').value);
+      const resBox = document.getElementById('calcResultBox') || document.getElementById('bmiResultBox');
+      const resText = document.getElementById('bmiResultText');
+      const advText = document.getElementById('bmiAdviceText');
+
+      if (!hCm || !wKg || hCm <= 0 || wKg <= 0) {
+        resBox.classList.remove('hidden');
+        resText.textContent = 'Please enter valid height and weight values.';
+        advText.textContent = '';
+        return;
+      }
+
+      const hM = hCm / 100;
+      const bmi = (wKg / (hM * hM)).toFixed(1);
+      resBox.classList.remove('hidden');
+
+      let category = '';
+      let advice = '';
+
+      if (bmi < 18.5) {
+        category = 'Underweight';
+        advice = 'Recommended: Muscle Building & Caloric Surplus Plan.';
+      } else if (bmi < 24.9) {
+        category = 'Healthy Weight';
+        advice = 'Recommended: Strength Training & Athletic Conditioning.';
+      } else if (bmi < 29.9) {
+        category = 'Overweight';
+        advice = 'Recommended: Weight Loss & High-Energy Functional HIIT.';
+      } else {
+        category = 'Obese Range';
+        advice = 'Recommended: 1-on-1 Personal Training with Low-Impact Cardio.';
+      }
+
+      resText.innerHTML = `Your BMI is <strong>${bmi}</strong> (${category})`;
+      advText.textContent = advice;
+    }
+
+    // Contact Form Handler
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const successMsg = document.getElementById('contactSuccessMsg');
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Sending...</span>';
+
+      setTimeout(() => {
+        successMsg.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>MESSAGE SENT</span>';
+        document.getElementById('gymContactForm').reset();
+      }, 700);
+    }
+  </script>
+</body>
+</html>
